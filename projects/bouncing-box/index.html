@@ -8,7 +8,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(94, 245, 7);
 			font-size: 300%;
 			text-align: center;
 			display: block;
@@ -49,11 +49,17 @@
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX) {
 				box.css("left", newPositionX);
+				
+				var positionX = 10;
+			positionX = positionX + 10
+			moveBoxTo(positionX)
+			}
 			}
 
 			// changes the text displayed on the Box
-			function changeBoxText(newText) {
-				box.text(newText);
+			function changeBoxText(1) {
+				box.text(1);
+			
 			}
 
 			//////////////////////////////////////////////////////////////////
@@ -61,8 +67,25 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+			function update() 
+			nameOfFunction(arguments)
+			{
+    /* Your Code to Increase positionX by 10 HERE*/
+    moveBoxTo(positionX);
+	myVariable = myVariable + 10;
 
+ };
+			
+			var myVariable = someValue;
+			function update() {
+ moveBoxTo(positionX);
+
+};         
+
+
+// so on...
+			
+		
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -80,11 +103,12 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
+				var positionX = 0;
+				chnageBoxText(1);
 
 
 			};
-		})();
+		;
 	</script>
 </body>
 </html>
