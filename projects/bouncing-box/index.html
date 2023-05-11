@@ -8,13 +8,13 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: rgb(94, 245, 7);
+			background-color: teal;
 			font-size: 300%;
 			text-align: center;
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 200px;  /* <--- Change me! */
 		}
 		.board{
 			height: 100vh;
@@ -46,20 +46,16 @@
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
 
+			
+
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX) {
 				box.css("left", newPositionX);
-				
-				var positionX = 10;
-			positionX = positionX + 10
-			moveBoxTo(positionX)
-			}
 			}
 
 			// changes the text displayed on the Box
-			function changeBoxText(1) {
-				box.text(1);
-			
+			function changeBoxText(newText) {
+				box.text(newText);
 			}
 
 			//////////////////////////////////////////////////////////////////
@@ -67,25 +63,12 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			function update() 
-			nameOfFunction(arguments)
-			{
-    /* Your Code to Increase positionX by 10 HERE*/
-    moveBoxTo(positionX);
-	myVariable = myVariable + 10;
-
- };
 			
-			var myVariable = someValue;
-			function update() {
- moveBoxTo(positionX);
+			var positionX = 0;
+			var points = 0;
+			var speed = 10;
 
-};         
-
-
-// so on...
 			
-		
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -93,9 +76,17 @@
 			turn it around! 
 			*/
 			function update() {
-				
+				// Your code will increse positionX by 10 here
+				positionX = positionX + speed;
+				moveBoxTo(positionX);
 
-			};
+				if (positionX > boardWidth)
+					{speed = -speed;}
+
+				if (positionX < 0)
+					{speed = -speed;}
+			}
+
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -103,12 +94,22 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				var positionX = 0;
-				chnageBoxText(1);
+				positionX = 0;
+				points = points + 1;
+				changeBoxText(points);
+				if ((speed) => 0) {
+					speed = speed +3;
 
+				}
+				if (speed <= 0) {
+					speed = speed -3;
+				}
+				
+				var colorStr = "rgb(75, 40, 60)";
+				box.css("background-color", colorStr);
 
 			};
-		;
+		})();
 	</script>
 </body>
 </html>
